@@ -12,4 +12,3 @@ jobs:
       - run: |
           echo "Deploying!"
           echo "Deployed to ${{ github.event.deployment.environment }}"
-```
