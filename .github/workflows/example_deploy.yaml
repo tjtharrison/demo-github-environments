@@ -18,6 +18,7 @@ jobs:
           echo "Deployed to Dev environment!"
       
   deploy-staging:
+    needs: deploy-dev
     runs-on: ubuntu-latest
     environment: Staging
     steps:
@@ -29,6 +30,7 @@ jobs:
           echo "Deployed to Staging environment!"
 
   deploy-prod:
+    needs: deploy-staging
     runs-on: ubuntu-latest
     environment: Production
     steps:
