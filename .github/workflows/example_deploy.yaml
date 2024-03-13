@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v2
 
       - run: |
-        echo "Deploying!"
-        echo "Deployed to Dev environment!"
+          echo "Deploying!"
+          echo "Deployed to Dev environment!"
       
   deploy-staging:
     runs-on: ubuntu-latest
@@ -25,8 +25,8 @@ jobs:
         uses: actions/checkout@v2
 
       - run: |
-        echo "Deploying!"
-        echo "Deployed to Staging environment!"
+          echo "Deploying!"
+          echo "Deployed to Staging environment!"
 
   deploy-prod:
     runs-on: ubuntu-latest
@@ -36,5 +36,5 @@ jobs:
         uses: actions/checkout@v2
 
       - run: |
-        echo "Deploying!"
-        echo "Deployed to Production environment!"
+          echo "Deploying!"
+          echo "Deployed to Production environment!"
