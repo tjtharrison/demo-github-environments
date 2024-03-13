@@ -11,7 +11,7 @@ jobs:
   deploy-dev:
     uses: ./.github/workflows/deployment.yaml
     with:
-      environment: Development
+      environment: Dev
       
   deploy-staging:
     needs: deploy-dev
