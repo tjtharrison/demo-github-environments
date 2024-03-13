@@ -11,29 +11,14 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
     environment: Dev
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Do deployment
-        uses: .github/actions/do_deploy
+    uses: ./.github/actions/do_deploy
       
   deploy-staging:
-    needs: deploy-dev
     runs-on: ubuntu-latest
     environment: Staging
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Do deployment
-        uses: .github/actions/do_deploy
+    uses: ./.github/actions/do_deploy
       
   deploy-prod:
-    needs: deploy-staging
     runs-on: ubuntu-latest
     environment: Production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Do deployment
-        uses: .github/actions/do_deploy
-      
+    uses: ./.github/actions/do_deploy
