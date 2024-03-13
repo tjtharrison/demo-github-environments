@@ -2,6 +2,10 @@ name: Do deployment
 
 on:
   workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
 
 jobs:
   deploy:
@@ -11,4 +15,4 @@ jobs:
         uses: actions/checkout@v2
       - run: |
           echo "Deploying!"
-          echo "Deployed to ${{ github.event.deployment.environment }}"
+          echo "Deployed to ${{ inputs.environment }}"
