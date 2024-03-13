@@ -14,11 +14,13 @@ jobs:
       environment: Development
       
   deploy-staging:
+    needs: deploy-dev
     uses: ./.github/workflows/deployment.yaml
     with:
       environment: Staging
 
   deploy-prod:
+    needs: deploy-staging
     uses: ./.github/workflows/deployment.yaml
     with:
       environment: Production
