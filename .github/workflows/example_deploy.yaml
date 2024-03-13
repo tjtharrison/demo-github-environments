@@ -9,19 +9,16 @@ permissions: read-all
 
 jobs:
   deploy-dev:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/deployment.yaml
     with:
       environment: Development
       
   deploy-staging:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/deployment.yaml
     with:
       environment: Staging
 
   deploy-prod:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/deployment.yaml
     with:
       environment: Production
