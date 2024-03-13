@@ -1,0 +1,15 @@
+name: Do deployment
+
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: |
+          echo "Deploying!"
+          echo "Deployed to ${{ github.event.deployment.environment }}"
+```

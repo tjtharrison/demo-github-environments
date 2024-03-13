@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+permissions: read-all
+
 jobs:
   deploy-dev:
     runs-on: ubuntu-latest
@@ -12,10 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - run: |
-          echo "Deploying!"
-          echo "Deployed to Dev environment!"
+      - name: Do deployment
+        uses: ./actions/do_deploy.yaml
       
   deploy-staging:
     needs: deploy-dev
@@ -24,11 +24,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - run: |
-          echo "Deploying!"
-          echo "Deployed to Staging environment!"
-
+      - name: Do deployment
+        uses: ./actions/do_deploy.yaml
+      
   deploy-prod:
     needs: deploy-staging
     runs-on: ubuntu-latest
@@ -36,7 +34,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - run: |
-          echo "Deploying!"
-          echo "Deployed to Production environment!"
+      - name: Do deployment
+        uses: ./actions/do_deploy.yaml
+      
