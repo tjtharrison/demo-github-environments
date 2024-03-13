@@ -1,0 +1,40 @@
+name: Example deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+    envionment: Dev
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - run: |
+        echo "Deploying!"
+        echo "Deployed to Dev environment!"
+      
+  deploy-staging:
+    runs-on: ubuntu-latest
+    envionment: Staging
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - run: |
+        echo "Deploying!"
+        echo "Deployed to Staging environment!"
+
+  deploy-prod:
+    runs-on: ubuntu-latest
+    envionment: Production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - run: |
+        echo "Deploying!"
+        echo "Deployed to Production environment!"
