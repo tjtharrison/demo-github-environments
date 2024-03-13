@@ -11,14 +11,14 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
     environment: Dev
-    uses: ./.github/actions/do_deploy
+    uses: ./.github/actions/do_deploy/action.yaml
       
   deploy-staging:
     runs-on: ubuntu-latest
     environment: Staging
-    uses: ./.github/actions/do_deploy
+    uses: ./.github/actions/do_deploy/action.yaml
       
   deploy-prod:
     runs-on: ubuntu-latest
     environment: Production
-    uses: ./.github/actions/do_deploy
+    uses: ./.github/actions/do_deploy/action.yaml
